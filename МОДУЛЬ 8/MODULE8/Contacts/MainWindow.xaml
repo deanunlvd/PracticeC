@@ -1,0 +1,50 @@
+﻿<Window x:Class="Contacts.MainWindow"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+       xmlns:sys="clr-namespace:System;assembly=mscorlib"
+       Title="Контакты" Height="450" Width="583">
+    <Window.Resources>
+        <Style x:Key="PlaceholderTextBox" TargetType="TextBox">
+            <Style.Triggers>
+                <Trigger Property="Text" Value="">
+                    <Setter Property="Background">
+                        <Setter.Value>
+                            <VisualBrush AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                <VisualBrush.Visual>
+                                    <Label Content="{Binding RelativeSource={RelativeSource AncestorType=TextBox}, Path=Tag}" 
+                                           Foreground="Gray"/>
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <!-- Обновленный ListBox с обработчиком SelectionChanged -->
+        <ListBox x:Name="lstContacts" HorizontalAlignment="Left" Height="400" Margin="10,10,0,0" VerticalAlignment="Top" Width="300"
+                 DisplayMemberPath="Name" SelectionChanged="lstContacts_SelectionChanged"/>
+
+        <!-- Метки и поля ввода -->
+        <Label Content="Имя:" HorizontalAlignment="Left" Margin="320,30,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtName" Style="{StaticResource PlaceholderTextBox}" Tag="Name" HorizontalAlignment="Left" Margin="320,50,0,0" VerticalAlignment="Top" Width="120"/>
+
+        <Label Content="Телефон:" HorizontalAlignment="Left" Margin="320,80,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtPhone" Style="{StaticResource PlaceholderTextBox}" Tag="Phone" HorizontalAlignment="Left" Margin="320,100,0,0" VerticalAlignment="Top" Width="120"/>
+
+        <Label Content="Email:" HorizontalAlignment="Left" Margin="320,130,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtEmail" Style="{StaticResource PlaceholderTextBox}" Tag="Email" HorizontalAlignment="Left" Margin="320,150,0,0" VerticalAlignment="Top" Width="120"/>
+
+        <!-- Кнопки управления -->
+        <Button x:Name="btnAdd" Content="Добавить" HorizontalAlignment="Left" Margin="320,200,0,0" VerticalAlignment="Top" Width="75" Click="btnAdd_Click"/>
+        <Button x:Name="btnEdit" Content="Изменить" HorizontalAlignment="Left" Margin="405,200,0,0" VerticalAlignment="Top" Width="75" Click="btnEdit_Click"/>
+        <Button x:Name="btnDelete" Content="Удалить" HorizontalAlignment="Left" Margin="490,200,0,0" VerticalAlignment="Top" Width="75" Click="btnDelete_Click"/>
+
+        <!-- Поле поиска и кнопка -->
+        <Label Content="Поиск:" HorizontalAlignment="Left" Margin="320,0,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtSearch" Style="{StaticResource PlaceholderTextBox}" Tag="Search" HorizontalAlignment="Left" Margin="320,10,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnSearch" Content="Поиск" HorizontalAlignment="Left" Margin="450,10,0,0" VerticalAlignment="Top" Width="75" Click="btnSearch_Click"/>
+    </Grid>
+</Window>

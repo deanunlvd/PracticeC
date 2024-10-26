@@ -1,0 +1,28 @@
+﻿<Window x:Class="stud.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:stud"
+        mc:Ignorable="d"
+        Title="Учёт студентов" Height="467" Width="525">
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="ФИО студента:" Margin="10"/>
+            <TextBox x:Name="NameTextBox" Margin="10"/>
+            <TextBlock Text="Оценки (через запятую):" Margin="10"/>
+            <TextBox x:Name="GradesTextBox" Margin="10"/>
+            <TextBlock Text="Выберите курс:" Margin="10"/>
+            <ComboBox x:Name="CourseComboBox" Margin="10">
+                <ComboBoxItem Content="1-й курс"/>
+                <ComboBoxItem Content="2-й курс"/>
+                <ComboBoxItem Content="3-й курс"/>
+            </ComboBox>
+            <Button Content="Рассчитать" Click="OnCalculateClick" Margin="10"/>
+            <TextBlock Text="Информация о студенте:" Margin="10"/>
+            <TextBlock x:Name="CourseInfoTextBlock" Margin="10"/>
+            <TextBlock Text="Средний балл:" Margin="10"/>
+            <TextBlock x:Name="AverageGradeTextBlock" Margin="10"/>
+        </StackPanel>
+    </Grid>
+</Window>

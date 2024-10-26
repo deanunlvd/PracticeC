@@ -1,0 +1,32 @@
+﻿<Window x:Class="ex1.MainWindow"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Управление студентами" Height="342" Width="600">
+    <Grid>
+        <ListBox x:Name="lstStudents" HorizontalAlignment="Left" Height="300" Margin="10,10,0,0" VerticalAlignment="Top" Width="250" 
+                 DisplayMemberPath="Name" SelectionChanged="lstStudents_SelectionChanged"/>
+
+        <TextBlock Text="ID:" HorizontalAlignment="Left" Margin="270,10,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtId" HorizontalAlignment="Left" Margin="360,10,0,0" VerticalAlignment="Top" Width="100" IsReadOnly="True"/>
+
+        <TextBlock Text="Имя:" HorizontalAlignment="Left" Margin="270,40,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Margin="360,40,0,0" VerticalAlignment="Top" Width="200"/>
+
+        <TextBlock Text="Возраст:" HorizontalAlignment="Left" Margin="270,70,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtAge" HorizontalAlignment="Left" Margin="360,70,0,0" VerticalAlignment="Top" Width="100"/>
+
+        <TextBlock Text="Специальность:" HorizontalAlignment="Left" Margin="270,100,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtMajor" HorizontalAlignment="Left" Margin="360,100,0,0" VerticalAlignment="Top" Width="200"/>
+
+        <Button x:Name="btnAdd" Content="Добавить" HorizontalAlignment="Left" Margin="270,130,0,0" VerticalAlignment="Top" Width="100" Click="btnAdd_Click"/>
+        <Button x:Name="btnEdit" Content="Редактировать" HorizontalAlignment="Left" Margin="380,130,0,0" VerticalAlignment="Top" Width="100" Click="btnEdit_Click"/>
+        <Button x:Name="btnDelete" Content="Удалить" HorizontalAlignment="Left" Margin="490,130,0,0" VerticalAlignment="Top" Width="100" Click="btnDelete_Click"/>
+
+        <TextBlock Text="Поиск:" HorizontalAlignment="Left" Margin="270,150,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Margin="270,170,0,0" VerticalAlignment="Top" Width="200"/>
+        <Button x:Name="btnSearch" Content="Поиск" HorizontalAlignment="Left" Margin="480,170,0,0" VerticalAlignment="Top" Width="100" Click="btnSearch_Click"/>
+
+        <Button x:Name="btnSortByName" Content="Сортировать по имени" HorizontalAlignment="Left" Margin="270,210,0,0" VerticalAlignment="Top" Width="150" Click="btnSortByName_Click"/>
+        <Button x:Name="btnSortByAge" Content="Сортировать по возрасту" HorizontalAlignment="Left" Margin="270,240,0,0" VerticalAlignment="Top" Width="150" Click="btnSortByAge_Click"/>
+    </Grid>
+</Window>

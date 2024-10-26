@@ -1,0 +1,18 @@
+﻿<Window x:Class="ex3.AddBookWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Добавление книги" Height="250" Width="400">
+    <Grid Margin="10">
+        <StackPanel>
+
+            <TextBlock Text="Название книги" Margin="0,0,0,5"/>
+            <TextBox x:Name="txtTitle" Width="300" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Автор книги" Margin="0,0,0,5"/>
+            <TextBox x:Name="txtAuthor" Width="300" Margin="0,0,0,10"/>
+
+            <Button x:Name="btnAddBook" Content="Добавить книгу" Width="150" 
+                    HorizontalAlignment="Center" Click="btnAddBook_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

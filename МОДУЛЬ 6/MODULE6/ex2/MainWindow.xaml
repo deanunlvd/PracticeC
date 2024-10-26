@@ -1,0 +1,53 @@
+﻿<Window x:Class="ex2.MainWindow"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Учет задач" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Vertical" Margin="10">
+            <StackPanel Margin="0,0,0,10">
+                <TextBlock Text="Заголовок задачи:"/>
+                <TextBox x:Name="txtTitle" Margin="0,0,0,5"/>
+            </StackPanel>
+
+            <StackPanel Margin="0,0,0,10">
+                <TextBlock Text="Описание задачи:"/>
+                <TextBox x:Name="txtDescription" Margin="0,0,0,5"/>
+            </StackPanel>
+
+            <StackPanel Margin="0,0,0,10">
+                <TextBlock Text="Дата выполнения:"/>
+                <DatePicker x:Name="dpDueDate" Margin="0,0,0,5" SelectedDateFormat="Long"/>
+            </StackPanel>
+
+            <StackPanel Margin="0,0,0,10">
+                <TextBlock Text="Статус:"/>
+                <ComboBox x:Name="cbStatus" Margin="0,0,0,5">
+                    <ComboBoxItem Content="Не начато"/>
+                    <ComboBoxItem Content="В процессе"/>
+                    <ComboBoxItem Content="Завершено"/>
+                </ComboBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <Button Content="Добавить задачу" Click="AddTask_Click" Margin="0,0,10,0"/>
+                <Button Content="Редактировать задачу" Click="EditTask_Click"/>
+            </StackPanel>
+        </StackPanel>
+
+        <DataGrid x:Name="dataGridTasks" Grid.Row="1" AutoGenerateColumns="False" Margin="10"
+                  SelectionChanged="dataGridTasks_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding TaskID}" Width="50"/>
+                <DataGridTextColumn Header="Заголовок" Binding="{Binding Title}" Width="150"/>
+                <DataGridTextColumn Header="Описание" Binding="{Binding Description}" Width="300"/>
+                <DataGridTextColumn Header="Дата выполнения" Binding="{Binding DueDate}" Width="100"/>
+                <DataGridTextColumn Header="Статус" Binding="{Binding Status}" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
